@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private float _moveSpeed = 3f;
     private Rigidbody2D _rb;
     private Vector2 _moveInput;
+    
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,5 +25,11 @@ public class PlayerMovement : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         _moveInput = context.ReadValue<Vector2>();
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        if (other.gameObject.layer == 8) { //layer 8 == pushable
+            other.gameObject.GetComponent<Pushable>().Push(_moveInput.normalized);
+        }
     }
 }
