@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -8,29 +7,29 @@ public class Pushable : MonoBehaviour {
     public LayerMask pushableLayer; // other blocks
     public float slideTime = 0.15f; // sliding speed
 
-    private bool isMoving = false;
-
-    [SerializeField] private Vector3Int _finalCell = new Vector3Int(-1, 1, 0);
-    private Vector3Int targetCell;
-    [SerializeField] private Rigidbody2D _rb;
+    private bool _isMoving;
     
+    [SerializeField] private Vector3Int finalCell = new(-1, 1, 0);
+    private Vector3Int _targetCell;
+    private bool _isFinished;
 
-    public bool Push(Vector2 direction) {
-        if (isMoving) return false;
+    public bool Push(Vector2 direction)
+    {
+        if (_isMoving || _isFinished) return false;
 
         Vector3Int currentCell = collisionTilemap.WorldToCell(transform.position);
-        targetCell = currentCell + new Vector3Int((int)direction.x, (int)direction.y, 0);
+        _targetCell = currentCell + new Vector3Int((int)direction.x, (int)direction.y, 0);
         Debug.Log("old loc = " + currentCell);
-        Debug.Log("new loc = " + targetCell);
+        Debug.Log("new loc = " + _targetCell);
 
 
         // Check if blocked
-        if (IsBlocked(targetCell))
+        if (IsBlocked(_targetCell))
             return false;
 
 
         // Start slide coroutine
-        StartCoroutine(SlideTo(collisionTilemap.GetCellCenterWorld(targetCell)));
+        StartCoroutine(SlideTo(collisionTilemap.GetCellCenterWorld(_targetCell)));
         return true;
     }
 
@@ -49,7 +48,7 @@ public class Pushable : MonoBehaviour {
     }
 
     private IEnumerator SlideTo(Vector3 target) {
-        isMoving = true;
+        _isMoving = true;
 
         Vector3 start = transform.position;
         float t = 0f;
@@ -61,11 +60,12 @@ public class Pushable : MonoBehaviour {
         }
 
         transform.position = target; // perfect snap
-        isMoving = false;
+        _isMoving = false;
 
-        if (targetCell == _finalCell) {
-            Debug.Log("reached goal!" + _finalCell + " " + targetCell);
-            _rb.bodyType = RigidbodyType2D.Kinematic;
+        if (_targetCell == finalCell) {
+            Debug.Log("reached goal!" + finalCell + " " + _targetCell);
+           
+            _isFinished = true;
         }
     }
 }
