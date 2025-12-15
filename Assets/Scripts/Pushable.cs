@@ -7,6 +7,8 @@ public class Pushable : MonoBehaviour {
     public LayerMask pushableLayer; // other blocks
     public float slideTime = 0.15f; // sliding speed
 
+    [SerializeField] private SpriteRenderer spriteRenderer;
+
     private bool _isMoving;
     
     [SerializeField] private Vector3Int finalCell = new(-1, 1, 0);
@@ -66,6 +68,7 @@ public class Pushable : MonoBehaviour {
             Debug.Log("reached goal!" + finalCell + " " + _targetCell);
            
             _isFinished = true;
+            spriteRenderer.color = Color.red;
         }
     }
 }
