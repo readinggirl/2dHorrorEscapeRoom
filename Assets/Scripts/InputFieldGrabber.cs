@@ -2,7 +2,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InputFieldGrabber : MonoBehaviour {
+public class InputFieldGrabber : MonoBehaviour
+{
     [Header("The value we got from the input field")] [SerializeField]
     private string inputText;
 
@@ -12,18 +13,22 @@ public class InputFieldGrabber : MonoBehaviour {
     [SerializeField] private TMP_Text reactionTextBox;
 
     // This is called by the Input Field (On Value Changed or On End Edit)
-    public void GrabFromInputField(string input) {
+    public void GrabFromInputField(string input)
+    {
         inputText = input;
         DisplayReactionToInput();
     }
 
-    private void DisplayReactionToInput() {
+    private void DisplayReactionToInput()
+    {
         reactionGroup.SetActive(true);
 
-        if (inputText == "asdf") {
+        if (inputText == "asdf")
+        {
             reactionTextBox.text = "You escaped!";
         }
-        else {
+        else
+        {
             reactionTextBox.text = "Try again.";
         }
     }
