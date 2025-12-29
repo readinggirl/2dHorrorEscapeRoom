@@ -4,8 +4,9 @@ using UnityEngine.InputSystem;
 
 public class InteractionDetector : MonoBehaviour
 {
-    private IInteractable _interactableInRange = null;
+    public static IInteractable _interactableInRange = null;
     public GameObject interactionIcon;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,7 +18,7 @@ public class InteractionDetector : MonoBehaviour
     {
         if (context.performed)
         {
-            _interactableInRange?.Interact();
+            _interactableInRange?.Interact(); 
         }
     }
 
