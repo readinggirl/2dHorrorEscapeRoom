@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 75808123578988092}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.85, y: -3.91, z: 0}
+  m_LocalPosition: {x: -4.29, y: -0.37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -152,3 +152,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Chest
   itemPrefab: {fileID: 7733826425757457013, guid: 935d480a7a99fb74ebaa475a38a8ab4a, type: 3}
   openedSprite: {fileID: 1193823366, guid: fad34e2be882dc04c8b42f1672650c37, type: 3}
+  UIChestCode: {fileID: 0}
+  passwordInput: {fileID: 0}
+  reactionText: {fileID: 0}
