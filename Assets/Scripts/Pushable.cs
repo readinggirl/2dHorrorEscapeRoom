@@ -62,9 +62,10 @@ public class Pushable : MonoBehaviour
         {
             t += Time.deltaTime;
             transform.position = Vector3.Lerp(start, target, t / slideTime);
+            
             yield return null;
         }
-
+       
         transform.position = target; // perfect snap
         _isMoving = false;
 

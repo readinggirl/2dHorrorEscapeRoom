@@ -4,11 +4,11 @@
 - Active scene:
   - Name: Indoor
   - Tags:
-    - Untagged, Respawn, Finish, EditorOnly, MainCamera, Player, GameController
+    - Untagged, Respawn, Finish, EditorOnly, MainCamera, Player, GameController, Pickup, Door
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, Pushable
 - Active game object:
-  - Name: Player
+  - Name: TimerText
   - Tag: Untagged
-  - Layer: Default
+  - Layer: UI
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

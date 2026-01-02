@@ -1,34 +1,32 @@
 using System;
 using TMPro;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Chest : MonoBehaviour, IInteractable
 {
-    public bool IsOpened { get; private set; } = false;
+    private bool isOpened { get; set; }
 
     public GameObject itemPrefab; //key
-
-    public Sprite openedSprite;
-
-    public GameObject UIChestCode;
+    
+    public GameObject uiChestCode;
     public TMP_InputField passwordInput;
-    private readonly string password = "HOLY";
+    public const string Password = "HOLY";
 
     public TMP_Text reactionText;
 
     private void Update()
     {
-        if (UIChestCode.activeSelf && Keyboard.current.escapeKey.wasPressedThisFrame)
+        if (uiChestCode.activeSelf && Keyboard.current.escapeKey.wasPressedThisFrame)
         {
-            UIChestCode.SetActive(false);
+            uiChestCode.SetActive(false);
+            Time.timeScale = 1;
         }
     }
 
     public bool CanInteract()
     {
-        return !IsOpened;
+        return !isOpened;
     }
 
     public void Interact()
@@ -36,9 +34,10 @@ public class Chest : MonoBehaviour, IInteractable
         if (!CanInteract()) return;
 
         //show UI
-        if (!UIChestCode.activeInHierarchy)
+        if (!uiChestCode.activeInHierarchy)
         {
-            UIChestCode.SetActive(true);
+            Time.timeScale = 0;
+            uiChestCode.SetActive(true);
             passwordInput.text = "";
             passwordInput.ActivateInputField();
         }
@@ -46,19 +45,20 @@ public class Chest : MonoBehaviour, IInteractable
 
     public void CheckPassword()
     {
-        if (passwordInput.text.Trim().ToUpper() == password) 
+        if (string.Equals(passwordInput.text.Trim(), Password.Trim(), StringComparison.CurrentCultureIgnoreCase))
         {
             Debug.Log("Correct Code! Key spawned.");
-            UIChestCode.SetActive(false);
+            uiChestCode.SetActive(false);
             OpenChest();
         }
-        else 
+        else
         {
             Debug.Log("Wrong Code.");
             Debug.Log(passwordInput.text);
             reactionText.text = "Wrong Code!";
         }
     }
+
     private void OpenChest()
     {
         SetOpened(true);
@@ -67,15 +67,17 @@ public class Chest : MonoBehaviour, IInteractable
         if (itemPrefab)
         {
             GameObject droppedItem = Instantiate(itemPrefab, transform.position + Vector3.down, Quaternion.identity);
-            Debug.Log(droppedItem + "instatiated");
+            Debug.Log(droppedItem + "instantiated");
         }
+
+        Time.timeScale = 1;
     }
 
-    public void SetOpened(bool opened)
+    private void SetOpened(bool opened)
     {
-        if (IsOpened = opened)
+        if (isOpened = opened)
         {
-            GetComponent<SpriteRenderer>().sprite = openedSprite;
+            GetComponent<SpriteRenderer>().color = Color.gray;
         }
     }
 }

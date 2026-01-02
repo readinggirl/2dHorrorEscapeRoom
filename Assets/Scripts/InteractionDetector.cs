@@ -1,10 +1,9 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class InteractionDetector : MonoBehaviour
 {
-    public static IInteractable _interactableInRange = null;
+    private IInteractable _interactableInRange;
     public GameObject interactionIcon;
     
 
