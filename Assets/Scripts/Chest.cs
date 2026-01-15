@@ -2,16 +2,17 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class Chest : MonoBehaviour, IInteractable
 {
-    private bool isOpened { get; set; }
+    private bool IsOpened { get; set; }
 
     public GameObject itemPrefab; //key
     
     public GameObject uiChestCode;
     public TMP_InputField passwordInput;
-    public const string Password = "HOLY";
+    [SerializeField] private string password = "HOLY";
 
     public TMP_Text reactionText;
 
@@ -26,7 +27,7 @@ public class Chest : MonoBehaviour, IInteractable
 
     public bool CanInteract()
     {
-        return !isOpened;
+        return !IsOpened;
     }
 
     public void Interact()
@@ -40,12 +41,13 @@ public class Chest : MonoBehaviour, IInteractable
             uiChestCode.SetActive(true);
             passwordInput.text = "";
             passwordInput.ActivateInputField();
+            
         }
     }
 
     public void CheckPassword()
     {
-        if (string.Equals(passwordInput.text.Trim(), Password.Trim(), StringComparison.CurrentCultureIgnoreCase))
+        if (string.Equals(passwordInput.text.Trim(), password.Trim(), StringComparison.CurrentCultureIgnoreCase))
         {
             Debug.Log("Correct Code! Key spawned.");
             uiChestCode.SetActive(false);
@@ -75,7 +77,7 @@ public class Chest : MonoBehaviour, IInteractable
 
     private void SetOpened(bool opened)
     {
-        if (isOpened = opened)
+        if (IsOpened = opened)
         {
             GetComponent<SpriteRenderer>().color = Color.gray;
         }

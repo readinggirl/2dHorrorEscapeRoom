@@ -42,13 +42,18 @@ public class PlayerMovement : MonoBehaviour
         {
             Destroy(other.gameObject);
             keyPickupCount++;
-            
+            Debug.Log("Key pickup counter: " + keyPickupCount);
         }
 
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Door") && keyPickupCount == 2)
         {
+            Debug.Log("you won!");
             //todo: make win scene
-            SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("YouWon");
         }
     }
 }

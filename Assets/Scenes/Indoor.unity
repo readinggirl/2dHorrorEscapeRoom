@@ -127,6 +127,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 485082964935181520, guid: 8ff8562314885fb4fa17817c6c8877a2, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 485082964935181520, guid: 8ff8562314885fb4fa17817c6c8877a2, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 485082964935181520, guid: 8ff8562314885fb4fa17817c6c8877a2, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 1903422270435889109, guid: 8ff8562314885fb4fa17817c6c8877a2, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -182,6 +194,18 @@ PrefabInstance:
     - target: {fileID: 4664290803429438327, guid: 8ff8562314885fb4fa17817c6c8877a2, type: 3}
       propertyPath: m_Name
       value: UIChestCode
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558577906062845114, guid: 8ff8562314885fb4fa17817c6c8877a2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200028393069830253, guid: 8ff8562314885fb4fa17817c6c8877a2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -108.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891325039689804750, guid: 8ff8562314885fb4fa17817c6c8877a2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8902883027613685700, guid: 8ff8562314885fb4fa17817c6c8877a2, type: 3}
       propertyPath: m_Pivot.x
