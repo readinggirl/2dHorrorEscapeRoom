@@ -1,14 +1,14 @@
 <!-- UNITY CODE ASSIST INSTRUCTIONS START -->
-- Project name: 2DEscapeRoomHorror
+- Project name: 2dEscapeRoom
 - Unity version: Unity 6000.2.10f1
 - Active scene:
-  - Name: GameOver
+  - Name: Indoor
   - Tags:
     - Untagged, Respawn, Finish, EditorOnly, MainCamera, Player, GameController, Pickup, Door
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, Pushable
 - Active game object:
-  - Name: Canvas
-  - Tag: Untagged
-  - Layer: UI
+  - Name: Key_Pickup
+  - Tag: Pickup
+  - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

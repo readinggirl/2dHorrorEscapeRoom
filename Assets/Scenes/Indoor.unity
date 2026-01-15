@@ -2113,6 +2113,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Key_Pickup
       objectReference: {fileID: 0}
+    - target: {fileID: 5691524538965148025, guid: f8295cf28ab8e044480b252da9c617b1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6922441044031900784, guid: f8295cf28ab8e044480b252da9c617b1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.13466084
