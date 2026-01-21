@@ -1,5 +1,5 @@
 <!-- UNITY CODE ASSIST INSTRUCTIONS START -->
-- Project name: 2dEscapeRoom
+- Project name: 2DEscapeRoomHorror
 - Unity version: Unity 6000.2.10f1
 - Active scene:
   - Name: Indoor
@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, Pushable
 - Active game object:
-  - Name: Freeform Light 2D (5)
+  - Name: Lighting
   - Tag: Untagged
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
