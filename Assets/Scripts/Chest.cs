@@ -15,6 +15,8 @@ public class Chest : MonoBehaviour, IInteractable
     [SerializeField] private string password = "HOLY";
 
     public TMP_Text reactionText;
+    
+    public AudioClip openChestClip;
 
     private void Update()
     {
@@ -37,6 +39,9 @@ public class Chest : MonoBehaviour, IInteractable
         //show UI
         if (!uiChestCode.activeInHierarchy)
         {
+            //play sound
+            SoundFXManager.instance.PlaySoundFXClip(openChestClip, transform, 1f);
+            
             Time.timeScale = 0;
             uiChestCode.SetActive(true);
             passwordInput.text = "";
@@ -68,6 +73,7 @@ public class Chest : MonoBehaviour, IInteractable
         //drop key
         if (itemPrefab)
         {
+            //key sparkle sound
             GameObject droppedItem = Instantiate(itemPrefab, transform.position + Vector3.down, Quaternion.identity);
             Debug.Log(droppedItem + "instantiated");
         }
