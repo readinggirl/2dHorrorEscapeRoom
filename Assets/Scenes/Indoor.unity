@@ -797,6 +797,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 19056484}
     - target: {fileID: 1080354430614300972, guid: 6b69d77e5c2ec12409f90f5493ad7b49, type: 3}
+      propertyPath: openChestClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 268cf76c1747df341946c570995dfe8e, type: 3}
+    - target: {fileID: 1080354430614300972, guid: 6b69d77e5c2ec12409f90f5493ad7b49, type: 3}
       propertyPath: passwordInput
       value: 
       objectReference: {fileID: 19056485}
@@ -913,6 +917,22 @@ PrefabInstance:
     - target: {fileID: 7990547358828992248, guid: cc861fab16dbdae4a8ee07308d7ad4d8, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201027493385247952, guid: cc861fab16dbdae4a8ee07308d7ad4d8, type: 3}
+      propertyPath: exitTag
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201027493385247952, guid: cc861fab16dbdae4a8ee07308d7ad4d8, type: 3}
+      propertyPath: nextScene
+      value: 
+      objectReference: {fileID: 102900000, guid: 286c38f35ddffd142b859962e79f9069, type: 3}
+    - target: {fileID: 8201027493385247952, guid: cc861fab16dbdae4a8ee07308d7ad4d8, type: 3}
+      propertyPath: exitKeyCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201027493385247952, guid: cc861fab16dbdae4a8ee07308d7ad4d8, type: 3}
+      propertyPath: keyPickupCount
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3182,7 +3202,7 @@ Transform:
   m_GameObject: {fileID: 1108865920}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.593788, y: -3.8795998, z: -15}
+  m_LocalPosition: {x: -6.15, y: -3.88, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

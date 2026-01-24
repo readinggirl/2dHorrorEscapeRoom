@@ -1,3 +1,5 @@
+using System.IO;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -10,6 +12,9 @@ public class PlayerMovement : MonoBehaviour
     private Animator _playerAnimation;
     [SerializeField] private int keyPickupCount;
 
+    public SceneAsset nextScene;
+    public string exitTag;
+    public int exitKeyCount;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -49,11 +54,9 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.CompareTag("Door") && keyPickupCount == 2)
+        if (other.gameObject.CompareTag(exitTag) && keyPickupCount == exitKeyCount)
         {
-            Debug.Log("you won!");
-            //todo: make win scene
-            SceneManager.LoadScene("YouWon");
+            SceneManager.LoadScene(Path.GetFileNameWithoutExtension(AssetDatabase.GetAssetPath(nextScene)));
         }
     }
 }
