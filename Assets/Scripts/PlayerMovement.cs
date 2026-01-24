@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _moveInput;
     private Animator _playerAnimation;
     [SerializeField] private int keyPickupCount;
+    public AudioClip openDoor;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -51,8 +52,8 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Door") && keyPickupCount == 2)
         {
+            SoundFXManager.instance.PlaySoundFXClip(openDoor, transform, 1f);
             Debug.Log("you won!");
-            //todo: make win scene
             SceneManager.LoadScene("YouWon");
         }
     }

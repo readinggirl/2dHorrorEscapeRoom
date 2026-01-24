@@ -7,7 +7,8 @@ public class PickupAppear : MonoBehaviour
     public GameObject[] pushables;
     private List<PushableTall> _scripts = new();
     public GameObject pickup;
-    private bool _levelComplete; 
+    private bool _levelComplete;
+    public AudioClip keySpawn;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,8 +28,9 @@ public class PickupAppear : MonoBehaviour
         if (_levelComplete) return;
         
         
-        if (_scripts.Count > 0 && _scripts.All(p => p.isFinished))
-        {
+        if (_scripts.Count > 0 && _scripts.All(p => p.isFinished)) {
+            //Instantiate(pickup, );
+            SoundFXManager.instance.PlaySoundFXClip(keySpawn, transform, 1f);
             pickup.SetActive(true);
             _levelComplete = true;
         }

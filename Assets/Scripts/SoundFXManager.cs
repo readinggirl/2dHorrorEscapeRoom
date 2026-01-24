@@ -27,6 +27,6 @@ public class SoundFXManager : MonoBehaviour
         //get length of sound
         float clipLength = audioSource.clip.length;
         //destroy after clip length
-        Destroy(audioSource.gameObject, clipLength);
+        Destroy(audioSource.gameObject, clipLength + 0.2f);
     }
 }
