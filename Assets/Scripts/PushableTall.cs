@@ -74,6 +74,8 @@ public class PushableTall : MonoBehaviour
         transform.position = target;
         _isMoving = false;
 
+        Debug.Log(_targetCell);
+
         if (_targetCell == finalCell)
         {
             Debug.Log("reached goal!" + finalCell + " " + _targetCell);
