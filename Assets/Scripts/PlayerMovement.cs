@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _moveInput;
     private Animator _playerAnimation;
     [SerializeField] private int keyPickupCount;
+    public AudioClip openDoor;
 
     public SceneAsset nextScene;
     public string exitTag;
@@ -57,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag(exitTag) && keyPickupCount == exitKeyCount)
         {
             SceneManager.LoadScene(Path.GetFileNameWithoutExtension(AssetDatabase.GetAssetPath(nextScene)));
+            SoundFXManager.instance.PlaySoundFXClip(openDoor, transform, 1f);
         }
     }
 }

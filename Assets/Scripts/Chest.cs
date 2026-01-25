@@ -17,6 +17,7 @@ public class Chest : MonoBehaviour, IInteractable
     public TMP_Text reactionText;
     
     public AudioClip openChestClip;
+    public AudioClip keySpawnClip;
 
     private void Update()
     {
@@ -40,7 +41,6 @@ public class Chest : MonoBehaviour, IInteractable
         if (!uiChestCode.activeInHierarchy)
         {
             //play sound
-            SoundFXManager.instance.PlaySoundFXClip(openChestClip, transform, 1f);
             
             Time.timeScale = 0;
             uiChestCode.SetActive(true);
@@ -69,11 +69,14 @@ public class Chest : MonoBehaviour, IInteractable
     private void OpenChest()
     {
         SetOpened(true);
+        SoundFXManager.instance.PlaySoundFXClip(openChestClip, transform, 1f);
 
         //drop key
         if (itemPrefab)
         {
             //key sparkle sound
+            SoundFXManager.instance.PlaySoundFXClip(keySpawnClip, transform, 1f);
+
             GameObject droppedItem = Instantiate(itemPrefab, transform.position + Vector3.down, Quaternion.identity);
             Debug.Log(droppedItem + "instantiated");
         }
