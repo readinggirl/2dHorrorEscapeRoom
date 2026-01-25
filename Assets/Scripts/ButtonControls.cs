@@ -18,6 +18,7 @@ public class ButtonControls : MonoBehaviour {
     }
 
     public void HideCredits() {
+        Debug.Log("hidecredits");
         creditCanvas.SetActive(false);
     }
 }

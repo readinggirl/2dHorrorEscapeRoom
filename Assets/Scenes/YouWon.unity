@@ -2804,7 +2804,7 @@ GameObject:
   - component: {fileID: 1337305685}
   - component: {fileID: 1337305684}
   m_Layer: 5
-  m_Name: TryAgainButton
+  m_Name: NewGameButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2883,7 +2883,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Indoor
+          m_StringArgument: Tutorial
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1337305685
@@ -3042,7 +3042,7 @@ GameObject:
   - component: {fileID: 1679993650}
   - component: {fileID: 1679993649}
   m_Layer: 5
-  m_Name: GameOver2
+  m_Name: YouWonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3178,7 +3178,7 @@ GameObject:
   - component: {fileID: 1872940030}
   - component: {fileID: 1872940029}
   m_Layer: 5
-  m_Name: GameOver
+  m_Name: YouWon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3452,6 +3452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b25160edb70e9f4db31a53e790b4c21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonControls
+  creditCanvas: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

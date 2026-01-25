@@ -29,7 +29,6 @@ public class PickupAppear : MonoBehaviour
         
         
         if (_scripts.Count > 0 && _scripts.All(p => p.isFinished)) {
-            //Instantiate(pickup, );
             SoundFXManager.instance.PlaySoundFXClip(keySpawn, transform, 1f);
             pickup.SetActive(true);
             _levelComplete = true;

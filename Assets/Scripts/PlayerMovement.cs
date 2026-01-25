@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private int keyPickupCount;
     public AudioClip openDoor;
 
-    public SceneAsset nextScene;
+    public string nextScene;
     public string exitTag;
     public int exitKeyCount;
 
@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag(exitTag) && keyPickupCount == exitKeyCount)
         {
-            SceneManager.LoadScene(Path.GetFileNameWithoutExtension(AssetDatabase.GetAssetPath(nextScene)));
+            SceneManager.LoadScene(nextScene);
             SoundFXManager.instance.PlaySoundFXClip(openDoor, transform, 1f);
         }
     }

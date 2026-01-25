@@ -5,7 +5,7 @@ public class InteractionDetector : MonoBehaviour
 {
     private IInteractable _interactableInRange;
     public GameObject interactionIcon;
-    
+    public TMPro.TMP_Text interactionText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,6 +27,7 @@ public class InteractionDetector : MonoBehaviour
         {
             _interactableInRange = interactable;
             interactionIcon.SetActive(true);
+            if(interactionText != null) interactionText.gameObject.SetActive(true);
         }
     }
 
@@ -36,6 +37,8 @@ public class InteractionDetector : MonoBehaviour
         {
             _interactableInRange = null;
             interactionIcon.SetActive(false);
+            if(interactionText != null) interactionText.gameObject.SetActive(false);
+            
         }
     }
 }

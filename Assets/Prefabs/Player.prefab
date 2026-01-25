@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   interactionIcon: {fileID: 727504145752764738}
+  interactionText: {fileID: 0}
 --- !u!1 &7990547358828992248
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,7 +401,19 @@ MonoBehaviour:
     m_ActionId: 8c417ef1-a964-42a6-8d68-1576d83d94e1
     m_ActionName: 'Player/New action[/Keyboard/e]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5230848593977539856, guid: 865400e3d2e99a241ae8250e7a4ecc8d, type: 3}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Pause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 268ff762-be2d-46f8-ae3d-eb63ccc89caf
     m_ActionName: 'Player/ExitMenu[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
@@ -422,6 +435,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 3
   keyPickupCount: 0
+  openDoor: {fileID: 0}
+  nextScene: {fileID: 0}
+  exitTag: 
+  exitKeyCount: 0
 --- !u!114 &1000872077425666515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,6 +455,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   pickup: {fileID: 0}
+  keySpawn: {fileID: 8300000, guid: 1829b0e82da0ff04bbf7c144bbf206ad, type: 3}
 --- !u!61 &7292836653577164170
 BoxCollider2D:
   m_ObjectHideFlags: 0
