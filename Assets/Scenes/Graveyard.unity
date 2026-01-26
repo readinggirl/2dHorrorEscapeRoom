@@ -2640,7 +2640,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 11b850e19dee4b64ba94ce04137eb865, type: 3}
     - target: {fileID: 8201027493385247952, guid: cc861fab16dbdae4a8ee07308d7ad4d8, type: 3}
       propertyPath: nextScene
-      value: YouWin
+      value: YouWon
       objectReference: {fileID: 0}
     - target: {fileID: 8201027493385247952, guid: cc861fab16dbdae4a8ee07308d7ad4d8, type: 3}
       propertyPath: exitKeyCount
