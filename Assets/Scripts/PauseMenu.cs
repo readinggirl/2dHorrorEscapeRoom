@@ -5,10 +5,11 @@ public class PauseMenu : MonoBehaviour {
 
     public GameObject container;
 
-    private bool _isPaused;
+    private bool _isPaused = false;
     // Update is called once per frame
     
     public void Pause() {
+        Debug.Log("pause pressed");
         if (_isPaused) {
             Resume();
         }
