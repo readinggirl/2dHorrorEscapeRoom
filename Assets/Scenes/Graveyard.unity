@@ -127,6 +127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 982293023818733679, guid: 865400e3d2e99a241ae8250e7a4ecc8d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1237146506280347883, guid: 865400e3d2e99a241ae8250e7a4ecc8d, type: 3}
       propertyPath: m_Name
       value: PauseMenu
@@ -216,6 +220,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 865400e3d2e99a241ae8250e7a4ecc8d, type: 3}
+--- !u!114 &548836 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5230848593977539856, guid: 865400e3d2e99a241ae8250e7a4ecc8d, type: 3}
+  m_PrefabInstance: {fileID: 548835}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7da9e4b995f3b1f449c06e09a55c6c26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
 --- !u!1 &112587051
 GameObject:
   m_ObjectHideFlags: 0
@@ -2540,8 +2555,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 585658199041974994, guid: cc861fab16dbdae4a8ee07308d7ad4d8, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 548836}
+    - target: {fileID: 585658199041974994, guid: cc861fab16dbdae4a8ee07308d7ad4d8, type: 3}
       propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 585658199041974994, guid: cc861fab16dbdae4a8ee07308d7ad4d8, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Pause
       objectReference: {fileID: 0}
     - target: {fileID: 1000872077425666515, guid: cc861fab16dbdae4a8ee07308d7ad4d8, type: 3}
       propertyPath: pickup

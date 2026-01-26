@@ -2,21 +2,22 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour {
-
     public GameObject container;
 
     private bool _isPaused = false;
     // Update is called once per frame
-    
+
     public void Pause() {
         Debug.Log("pause pressed");
         if (_isPaused) {
             Resume();
         }
         else {
+            Debug.Log("now paused");
+
             container.SetActive(true);
             Time.timeScale = 0;
-            
+
             _isPaused = true;
         }
     }
@@ -24,7 +25,7 @@ public class PauseMenu : MonoBehaviour {
     public void Resume() {
         container.SetActive(false);
         Time.timeScale = 1;
-            
+
         _isPaused = false;
     }
 
